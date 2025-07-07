@@ -1,0 +1,19 @@
+{
+  "name": "mooneyiteracioniibackend",
+  "version": "1.0.0",
+  "description": "A backend for an authentication with JWT, refresh tokens and cookies, this time with a proper authentication header",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "keywords": [
+    "jwt",
+    "authentication",
+    "token",
+    "cookie",
+    "backend",
+    "mooney"
+  ],
+  "author": "Pablo Luis Molina Blanes",
+  "license": "MIT"
+}
