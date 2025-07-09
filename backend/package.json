@@ -10,5 +10,9 @@
     "mooney"
   ],
   "author": "Pablo Luis Molina Blanes",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
 }
