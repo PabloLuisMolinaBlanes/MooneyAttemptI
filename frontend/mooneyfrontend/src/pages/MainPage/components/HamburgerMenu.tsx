@@ -6,7 +6,7 @@ function HamburgerMenu() {
     const states = ["visible", "invisible"]
     const elements = ["Statistics", "Models"];
     const [visibility, setVisibility] = useState(0)
-    var navBar =  <nav className={`text-center flex flex-col divide-solid max-md:${visibility == 0 ? "visible" : "invisible"} md:invisible`}><ul>{elements.map(element => (<li>{element}</li>))}</ul></nav>
+    var navBar = <nav className={`text-center flex flex-col divide-solid max-md:${visibility === 0 ? "visible" : "invisible"} md:invisible`}><ul>{elements.map(element => (<li>{element}</li>))}</ul></nav>
     
     function switchState() {
         setVisibility((visibility + 1) % 2)
