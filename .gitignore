@@ -143,3 +143,9 @@ backend/build
 
 # Python environment
 services/.venv
+
+# VSCode folder
+.vscode
+
+# Prisma generated files
+backend/src/generated/

@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+  output = "../src/generated"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model labels {
+  id        Int         @id @default(autoincrement())
+  name      String
+  color     Int?
+  movements movements[]
+}
+
+model movements {
+  id      Int     @id @default(autoincrement())
+  concept String?
+  amount  Float
+  label   Int?
+  date    String?
+  labels  labels? @relation(fields: [label], references: [id])
+}
