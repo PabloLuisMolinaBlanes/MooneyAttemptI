@@ -1,10 +1,10 @@
 import type { Movement } from "../../../types/Movement"
 import TableRow from "./TableRow"
-type MovementProps = {movements: Movement[]}
+type MovementProps = {movements: Movement[], handleUpdate: (id : number, labelId : number) => void}
 
 const MovementTable = (props : MovementProps) => {
 
-    const tableRows = props.movements.map((movement : Movement) => {return (<TableRow movement={movement} />)})
+    const tableRows = props.movements.map((movement : Movement) => {return (<TableRow movement={movement} handleUpdate={props.handleUpdate} />)})
     
     return (<>
     <div id="container" className="flex flex-row">
@@ -17,6 +17,7 @@ const MovementTable = (props : MovementProps) => {
                     <th className="border-1">Amount</th>
                     <th className="border-1">Label</th>
                     <th className="border-1">Date</th>
+                    <th></th>
                 </tr>
                 {tableRows}
             </tbody>

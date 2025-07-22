@@ -14,7 +14,12 @@ function MainPage() {
     const [concept, setConcept] = useState("")
     const [amount, setAmount] = useState(0)
     const [labelName, setLabelName] = useState("")
+    const [labelId, setLabelID] = useState(-1)
     const [date, setDate] = useState("" + new Date())
+    const [id, setId] = useState(-1)
+
+    const label = {id: labelId, name: labelName, color: 0}
+    const movement = {id: id, concept: concept, amount: amount, label: label, date: new Date(date)}
 
     function handleConcept(e : ChangeEvent<HTMLInputElement>) {
         setConcept(e.target.value)
@@ -32,8 +37,10 @@ function MainPage() {
         setDate(e.target.value)
     }
 
-    const label : Label = {name: labelName, color: 0}
-    const movement : Movement = {concept: concept, amount: amount, label: label, date: new Date(date)}
+    function handleId(id : number, labelId : number) {
+        setId(id)
+        setLabelID(labelId)
+    }
 
     useEffect(() => {
         console.log(movement)
@@ -65,7 +72,7 @@ function MainPage() {
         <HamburgerMenu />
         <MenuDesktop />
         <ValueIndicator totalValue={totalValue} />
-        {isPending ? <div>Loading table...</div> : <MovementTable movements={data == undefined ? [] : data} />}
+        {isPending ? <div>Loading table...</div> : <MovementTable movements={data == undefined ? [] : data} handleUpdate={handleId}/>}
         < CRUDMenu concept={concept} amount={amount} label={labelName} date={date} handleAmount={handleAmount} handleConcept={handleConcept} handleLabel={handleLabel} handleDate={handleDate} />
         <Button onClick={() => sendMovement()} />
     </>)

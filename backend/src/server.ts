@@ -17,7 +17,7 @@ app.get("/movements", async (req, res) => {
     res.send(await readAllMovements());
 })
 app.post("/sendMovement", async(req,res) => {
-    console.log(req.body.concept)
+    console.log(req.body.label.id)
     const movementSent = req.body
     res.send(await createMovement(movementSent))
 })
