@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import {readAllMovements} from './services/crud'
+import {readAllMovements, createMovement} from './services/crud'
 
 const app = express()
 const corsOptions = {
@@ -15,6 +15,11 @@ app.use(express.urlencoded({extended: true}))
 
 app.get("/movements", async (req, res) => {
     res.send(await readAllMovements());
+})
+app.post("/sendMovement", async(req,res) => {
+    console.log(req.body.concept)
+    const movementSent = req.body
+    res.send(await createMovement(movementSent))
 })
 
 app.listen(port, () => {

@@ -1,31 +1,30 @@
-type Label = {
-    name?: string | null
-    color?: number | null
-}
-
-type Movement = {
-    concept?: string | null,
-    amount: number,
-    label?: Label | null,
-    date?:  Date | null
-};
-
+import type { Movement } from "../../../types/Movement"
+import TableRow from "./TableRow"
 type MovementProps = {movements: Movement[]}
 
 const MovementTable = (props : MovementProps) => {
 
-    const tableRows = props.movements.map((movement : Movement) => {return (<><tr><td>{movement.concept}</td><td>{movement.amount}</td><td>{movement.label?.name}</td><td>{movement.date == null ? "" : "" + movement.date}</td></tr></>)})
+    const tableRows = props.movements.map((movement : Movement) => {return (<TableRow movement={movement} />)})
     
     return (<>
-    <table>
-        <tr>
-            <th>Concept</th>
-            <th>Amount</th>
-            <th>Label</th>
-            <th>Date</th>
-        </tr>
-        {tableRows}
-    </table>
+    <div id="container" className="flex flex-row">
+        <div id="left" className="w-1/9"></div>
+        <div id="center" className="w-7/9">
+        <table className="pr-8 [&>*:nth-child(even)]:bg-gray-200 md:w-10/10 border-1 text-center font-inter">
+            <tbody>
+                <tr className="border-1">
+                    <th className="border-1">Concept</th>
+                    <th className="border-1">Amount</th>
+                    <th className="border-1">Label</th>
+                    <th className="border-1">Date</th>
+                </tr>
+                {tableRows}
+            </tbody>
+        </table>
+        </div>
+        <div id="right" className="w-1/9"></div>
+    </div>
+    
     </>)
 }
 
