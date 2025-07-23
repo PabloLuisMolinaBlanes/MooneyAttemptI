@@ -7,7 +7,6 @@ import api from "../../utils/api";
 import Button from "./components/Button";
 import ValueIndicator from "./components/ValueIndicator";
 import type { Movement } from "../../types/Movement";
-import type { Label } from "../../types/Label";
 import CRUDMenu from "./components/CRUDMenu";
 function MainPage() {
 

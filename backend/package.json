@@ -1,14 +1,14 @@
 {
-  "name": "mooneyiteracioniibackend",
+  "name": "SolPFiteracioniibackend",
   "version": "1.0.0",
-  "description": "A backend for Mooney",
+  "description": "A backend for SolPF",
   "main": "index.js",
   "scripts": {
     "dev": "npx tsc --build && nodemon ./build/server.js",
     "build": "npx tsc --build"
   },
   "keywords": [
-    "mooney"
+    "SolPF"
   ],
   "author": "Pablo Luis Molina Blanes",
   "license": "MIT",

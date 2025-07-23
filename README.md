@@ -1,6 +1,6 @@
-# MooneyAttemptI (not final version)
+# SolPFAttemptI (not final version)
 
-Mooney is an app which aims to be a self-contained ledger for personal finances. It includes basic statistics, models, and a simple personal-use ledger.
+SolPF is an app which aims to be a self-contained ledger for personal finances. It includes basic statistics, models, and a simple personal-use ledger.
 
 # Disclaimer
 

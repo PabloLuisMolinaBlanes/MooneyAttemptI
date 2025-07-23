@@ -23,5 +23,5 @@ app.post("/sendMovement", async(req,res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Mooney backend server is now listening in port ${port}`)
+    console.log(`SolPF backend server is now listening in port ${port}`)
 })
