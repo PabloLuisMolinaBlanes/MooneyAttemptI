@@ -1,7 +1,5 @@
 # SolPFAttemptI (not final version)
 
-test
-
 SolPF is an app which aims to be a self-contained ledger for personal finances. It includes basic statistics, models, and a simple personal-use ledger.
 
 # Disclaimer
