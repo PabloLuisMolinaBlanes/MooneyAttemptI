@@ -1,7 +1,6 @@
-import matplotlib
-import matplotlib.pyplot as plt
 import json
 from utils.data_handling.movement import Movement
+import utils.plotting
 
 import numpy as np
 import pandas as pd
@@ -16,6 +15,7 @@ def calculateStatistics(data : list[Movement]):
     json_data =	{
         "mean": mean,
         "sd": sd,
-        "count_by_label": count_by_label['amount']
+        "count_by_label": count_by_label['amount'],
+        "plot_image_string": utils.plotting.handle_plot(pandas_dataframe, mean)
     }
     return json.dumps(json_data)
