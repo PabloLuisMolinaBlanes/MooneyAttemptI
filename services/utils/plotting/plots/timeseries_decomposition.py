@@ -4,13 +4,14 @@ import seaborn as sns
 import pandas as pd
 import base64
 import io
+from statsmodels.tsa.seasonal import seasonal_decompose
+from dateutil.parser import parse
 
-def generate_mean_plot(df: pd.DataFrame, mean: float):
+def generate_seasonal_decompose(df: pd.DataFrame):
     matplotlib.use('Agg')
-    x = range(df['amount'].size)
+    additive_decomposition = seasonal_decompose(df['amount'], model='additive', period=1)
     plt.figure()
-    sns.lineplot(x=x, y=df['amount'])
-    plt.axhline(y=mean)
+    additive_decomposition.plot()
     buffer = io.BytesIO()
     plt.savefig(buffer, format='png')
     b64_string = base64.b64encode(buffer.getvalue())

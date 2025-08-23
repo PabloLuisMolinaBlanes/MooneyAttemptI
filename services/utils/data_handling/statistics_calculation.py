@@ -16,6 +16,7 @@ def calculateStatistics(data : list[Movement]):
         "mean": mean,
         "sd": sd,
         "count_by_label": count_by_label['amount'],
-        "plot_image_string": utils.plotting.handle_plot(pandas_dataframe, mean)
+        "plot_image_string": utils.plotting.handle_mean_plot(pandas_dataframe, mean),
+        "plot_image_string_2": utils.plotting.handle_auto_plot(pandas_dataframe)
     }
     return json.dumps(json_data)

@@ -16,13 +16,16 @@ matplotlib==3.10.3
 numpy==2.2.6
 packaging==25.0
 pandas==2.3.1
+patsy==1.0.1
 pillow==11.3.0
 pyparsing==3.2.3
 python-dateutil==2.9.0.post0
 pytz==2025.2
+scipy==1.15.3
 seaborn==0.13.2
 six==1.17.0
 SQLAlchemy==2.0.41
+statsmodels==0.14.5
 typing_extensions==4.14.1
 tzdata==2025.2
 Werkzeug==3.1.3

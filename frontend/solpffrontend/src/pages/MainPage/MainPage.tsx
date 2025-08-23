@@ -1,7 +1,7 @@
 import MenuDesktop from "./components/MenuDesktop";
 import HamburgerMenu from "./components/HamburgerMenu";
 import MovementTable from "./components/MovementTable";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState, type ChangeEvent } from "react";
 import api from "../../utils/api";
 import Button from "./components/Button";
@@ -10,6 +10,7 @@ import type { Movement } from "../../types/Movement";
 import CRUDMenu from "./components/CRUDMenu";
 function MainPage() {
 
+    const queryClient = useQueryClient();
     const [concept, setConcept] = useState("")
     const [amount, setAmount] = useState(0)
     const [labelName, setLabelName] = useState("")
@@ -61,6 +62,7 @@ function MainPage() {
         console.log("Started procedure!")
         const response = await api.post("http://localhost:3000/sendMovement", movement);
         console.log(response)
+        queryClient.invalidateQueries()
     }
 
     const movementArray = data === undefined ? [0] : data.map((datum) => datum.amount)

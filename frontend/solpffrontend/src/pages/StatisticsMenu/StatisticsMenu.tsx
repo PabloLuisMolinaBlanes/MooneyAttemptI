@@ -20,7 +20,7 @@ function StatisticsMenu() {
 
     return (<>
     <DropDown />
-    {isPending ? <div>Loading...</div> : <StatisticsResults dataReceived={data === undefined ? {mean: 0.0, sd: 0.0, count_by_label: {}, plot_image_string: ""} : data}/>}
+    {isPending ? <div>Loading...</div> : <StatisticsResults dataReceived={data === undefined ? {mean: 0.0, sd: 0.0, count_by_label: {}, plot_image_string: "", plot_image_string_2: ""} : data}/>}
     </>)
 }
 
